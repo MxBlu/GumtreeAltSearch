@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{page_title}} - Gumtree Parser</title>
+	
+	<!-- bootstrap garble -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{{ url_for('static', filename='ext_css/font-awesome.min.css') }}" type="text/css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='ext_css/bootstrap-4.0.0-beta.1.css') }}" type="text/css">
+	<!-- bootstrap garble end -->
+	
+	<link rel="stylesheet" href="{{ url_for('static', filename='UNSWtalk.css') }}">
+	
+	{% block head %}
+	{% endblock %}
+</head>
+<body>
+
+	<div class="wrapper">
+    {% block body %}
+	{% endblock %}
+	</div>
+	<!-- bootstrap garble -->
+    <script src="{{ url_for('static', filename='ext_js/jquery-3.2.1.slim.min.js') }}"
+	></script>
+	<script src="{{ url_for('static', filename='ext_js/popper.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='ext_js/bootstrap.min.js') }}"></script>
+	<!-- bootstrap garble end -->
+	{% block scripts %}
+	{% endblock %}
+</body>
+</html>

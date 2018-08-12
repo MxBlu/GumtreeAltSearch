@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% set page_title = "Mech Keebs" %}
+
+{% block body %}
+  <div class="container white-box my-3 px-4">
+	<!-- post start -->
+	{% for p in posts %}
+	<div class="row">
+      <div class="col-md-12 my-3" style="border:1px solid #cecece;">
+        <table class="table">
+          <thead>
+            <tr class="row">
+              <th class="col-md-5"><a href="{{ p['link'] }}">{{ p['title'] }}</a></th>
+              <th class="col-md-5">{{ p['location'] }} {{ p['date'] }}</th>
+			  <th class="col-md-2">${{ p['price'] }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row">
+              <td class="col-md-4">
+                <img class="img-fluid d-block" src="{{ p['img'] }}"> 
+			  </td>
+              <td class="col-md-8">{{ p['description']|safe }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+	{% endfor %}
+	<!-- post end -->
+	{{ posts|length }} items loaded.
+  </div>
+{% endblock %}
